@@ -5,6 +5,15 @@
   "blocks": {
     "input": [
       {
+        "id": "OmniFocus",
+        "type": "PrefixScript",
+        "prefix": "todo",
+        "space": true,
+        "args": "Required",
+        "script": "omnifocus.js",
+        "connections": ["CreateTask"]
+      },
+      {
         "id": "template",
         "type": "Keyword",
         "keyword": "template",
@@ -26,6 +35,12 @@
         "id": "GoHome",
         "type": "OpenInBrowser",
         "url": "https://github.com/tinytacoteam/zazu-template"
+      },
+      {
+        "id": "CreateTask",
+        "type": "UserScript",
+        "script": "create-task.js",
+        "connections": []
       }
     ]
   }
