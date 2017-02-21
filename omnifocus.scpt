@@ -1,5 +1,4 @@
 on run argv
-
 	tell application "System Events"
 		if not exists process "OmniFocus" then
 			tell application "OmniFocus" to activate

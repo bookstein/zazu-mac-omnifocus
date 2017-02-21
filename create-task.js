@@ -6,7 +6,7 @@ module.exports = (pluginContext) => {
         return new Promise((resolve, reject) => {
             exec(`osascript ${cwd}/omnifocus.scpt '${value}'`, (err, stdout, stderr) => {
                 console.log(err, stdout, stderr)
-                resolve()
+                resolve(value)
             })
         })
     }

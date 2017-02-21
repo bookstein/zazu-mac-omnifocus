@@ -1,5 +1,5 @@
 {
-  "name": "zazu-template",
+  "name": "zazu-omnifocus",
   "version": "1.0.0",
   "description": "Zazu Template for starting your own plugin.",
   "blocks": {
@@ -12,35 +12,20 @@
         "args": "Required",
         "script": "omnifocus.js",
         "connections": ["CreateTask"]
-      },
-      {
-        "id": "template",
-        "type": "Keyword",
-        "keyword": "template",
-        "title": "Zazu Template",
-        "subtitle": "Goto Zazu Template GitHub Repo",
-        "icon": "fa-files-o",
-        "connections": [
-          "GoHome"
-        ]
-      },
-      {
-        "id": "hello",
-        "type": "RootScript",
-        "script": "src/hello.js"
       }
     ],
     "output": [
       {
-        "id": "GoHome",
-        "type": "OpenInBrowser",
-        "url": "https://github.com/tinytacoteam/zazu-template"
-      },
-      {
         "id": "CreateTask",
         "type": "UserScript",
         "script": "create-task.js",
-        "connections": []
+        "connections": ["Notify"]
+      },
+      {
+        "id": "Notify",
+        "type": "SendNotification",
+        "title": "Omnifocus",
+        "message": "Success, a task was created as: {value}"
       }
     ]
   }
